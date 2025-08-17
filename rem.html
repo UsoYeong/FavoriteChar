@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>최애 캐릭터 도감</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="rem.css" />
+  <script defer src="rem.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <div class="left">
+        <span class="chip">Re:제로</span>
+        <span class="chip">프로필 카드</span>
+      </div>
+      <div class="right">
+        <button class="btn" onclick="toggleTheme()">테마</button>
+        <button class="btn" onclick="copyCard()">복사</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="banner">
+        <div class="emblem">REM</div>
+      </div>
+      <div class="content">
+        <div class="portrait">
+          <div class="avatar">
+            <img src="rem.png" alt="렘 이미지" />
+          </div>
+          <div class="upload">
+            <span>이미지 추가(선택): <strong>JPG/PNG</strong></span>
+            <label for="fileInput">파일 선택</label>
+            <input type="file" id="fileInput" accept="image/png, image/jpeg" />
+          </div>
+          <div class="rating">
+            <span>★★★★★</span>
+            <span style="margin-left: 6px">4.9</span>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="title">
+            <h1>렘 <span style="color: var(--accent-1)">(Rem)</span></h1>
+            <div class="subtitle">Re:제로부터 시작하는 이세계 생활</div>
+          </div>
+          <div class="tags">
+            <span class="chip">충직함</span>
+            <span class="chip">치유</span>
+            <span class="chip">귀여움</span>
+          </div>
+
+          <div class="grid">
+            <div class="row"><div class="k">성우</div><div class="v">미나세 이노리</div></div>
+            <div class="row"><div class="k">생일</div><div class="v">2월 2일</div></div>
+            <div class="row"><div class="k">키</div><div class="v">154cm</div></div>
+            <div class="row"><div class="k">종족</div><div class="v">오니</div></div>
+            <div class="row"><div class="k">무기</div><div class="v">철퇴 (모닝스타)</div></div>
+            <div class="row"><div class="k">성격</div><div class="v">충성심 강하고 상냥함</div></div>
+            <div class="row"><div class="k">능력</div><div class="v">오니화 가능, 치유 마법</div></div>
+            <div class="row"><div class="k">쌍둥이 자매</div><div class="v">람 (Ram)</div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid">
+            <div class="row"><div class="k">치유력</div><div class="v"><div class="meter"><div class="bar" style="--val: 80%"></div></div></div></div>
+            <div class="row"><div class="k">충성도</div><div class="v"><div class="meter"><div class="bar" style="--val: 90%"></div></div></div></div>
+            <div class="row"><div class="k">귀여움</div><div class="v"><div class="meter"><div class="bar" style="--val: 95%"></div></div></div></div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" onclick="location.href='kirigiri.html'">이전으로</button>
+            <button class="btn" onclick="location.href='index.html'">처음으로</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="footnote">※ 본 카드는 팬메이드 UI입니다. Re:제로 공식 설정을 바탕으로 정리한 형식입니다.</p>
+  </div>
+</body>
+</html>

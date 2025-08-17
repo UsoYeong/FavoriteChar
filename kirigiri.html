@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>키리기리 쿄코 | 캐릭터 프로필 카드</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <div class="left">
+        <span class="chip">단간론파</span>
+        <span class="chip">프로필 카드</span>
+      </div>
+      <div class="right">
+        <button class="btn" id="themeBtn">테마</button>
+        <button class="btn" id="copyBtn">복사</button>
+      </div>
+    </div>
+
+    <section class="card" id="card">
+      <div class="banner">
+        <div class="emblem">KK</div>
+      </div>
+      <div class="content">
+        <div class="portrait">
+          <figure class="avatar">
+            <img id="portraitImg" src="kirigiri.png" alt="키리기리 쿄코 이미지" />
+          </figure>
+          <div class="upload">
+            <div>이미지 추가(선택): <span class="chip">JPG/PNG</span></div>
+            <label>
+              <input type="file" id="fileInput" accept="image/*" />
+              파일 선택
+            </label>
+          </div>
+          <div class="rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+            <span style="margin-left:6px; color:var(--muted); font-weight:700; font-size:12px;">4.7</span>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="title">
+            <h1>키리기리 쿄코 <span style="color:var(--accent-1)">Kyoko Kirigiri</span></h1>
+            <div class="subtitle">霧切 響子 · 초고교급의 탐정</div>
+          </div>
+          <div class="tags">
+            <span class="chip">냉철</span>
+            <span class="chip">추리력</span>
+            <span class="chip">탐정</span>
+          </div>
+
+          <div class="grid">
+            <div class="row"><div class="k">생일</div><div class="v">10월 6일</div></div>
+            <div class="row"><div class="k">키</div><div class="v">167 cm</div></div>
+            <div class="row"><div class="k">칭호</div><div class="v">초고교급의 탐정</div></div>
+            <div class="row"><div class="k">소속</div><div class="v">카보가미네 학원</div></div>
+            <div class="row"><div class="k">CV</div><div class="v">히카사 요코</div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid">
+            <div class="row"><div class="k">추리력</div><div class="v"><div class="meter"><div class="bar" style="--val: 95%"></div></div></div></div>
+            <div class="row"><div class="k">냉정함</div><div class="v"><div class="meter"><div class="bar" style="--val: 90%"></div></div></div></div>
+            <div class="row"><div class="k">신뢰도</div><div class="v"><div class="meter"><div class="bar" style="--val: 85%"></div></div></div></div>
+            <div class="row"><div class="k">침착성</div><div class="v"><div class="meter"><div class="bar" style="--val: 92%"></div></div></div></div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" id="moreBtn">자세히 보기</button>
+            <button class="btn" id="shareBtn">공유</button>
+            <a href="index.html" class="btn">처음으로</a>
+          </div>
+
+          <p class="footnote">※ 본 카드는 팬메이드 UI입니다. 단간론파 공식 설정을 바탕으로 정리한 형식입니다.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <dialog id="sheet">
+    <div class="sheet-head">
+      <strong>키리기리 쿄코 — 상세 정보</strong>
+      <button class="btn" id="closeSheet">닫기</button>
+    </div>
+    <div class="sheet-body">
+      <section>
+        <h3>성격 & 특징</h3>
+        <ul class="ul">
+          <li>항상 침착하고 냉정하며 상황을 정확히 파악함.</li>
+          <li>추리력과 관찰력이 뛰어난 천재적 탐정.</li>
+          <li>신뢰를 중시하며 정의감도 강한 편.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>스토리</h3>
+        <ul class="ul">
+          <li>카보가미네 학원에 초대받은 <strong>초고교급 탐정</strong>.</li>
+          <li>나에기 마코토와 협력해 수많은 사건을 해결함.</li>
+          <li>가문의 전통을 잇는 엘리트 탐정 집안 출신.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>한 줄 소개</h3>
+        <p>“진실은 언제나 하나. 그걸 밝혀내는 것이 내 일이야.”</p>
+      </section>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미나토 유키나 | 캐릭터 프로필 카드</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <div class="left">
+        <span class="chip">뱅드림! 걸즈 밴드 파티</span>
+        <span class="chip">프로필 카드</span>
+      </div>
+      <div class="right">
+        <button class="btn" id="themeBtn">테마</button>
+        <button class="btn" id="copyBtn">복사</button>
+      </div>
+    </div>
+
+    <section class="card" id="card">
+      <div class="banner">
+        <div class="emblem">YK</div>
+      </div>
+      <div class="content">
+        <div class="portrait">
+          <figure class="avatar">
+            <img id="portraitImg" src="yukina.png" alt="미나토 유키나 이미지" />
+          </figure>
+          <div class="upload">
+            <div>이미지 추가(선택): <span class="chip">JPG/PNG</span></div>
+            <label>
+              <input type="file" id="fileInput" accept="image/*" />
+              파일 선택
+            </label>
+          </div>
+          <div class="rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span style="margin-left:6px; color:var(--muted); font-weight:700; font-size:12px;">5.0</span>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="title">
+            <h1>미나토 유키나 <span style="color:var(--accent-1)">Minato Yukina</span></h1>
+            <div class="subtitle">湊 友希那 · Roselia 보컬</div>
+          </div>
+          <div class="tags">
+            <span class="chip">보컬</span>
+            <span class="chip">완벽주의자</span>
+            <span class="chip">카리스마</span>
+          </div>
+
+          <div class="grid">
+            <div class="row"><div class="k">생일</div><div class="v">10월 26일</div></div>
+            <div class="row"><div class="k">키</div><div class="v">162 cm</div></div>
+            <div class="row"><div class="k">혈액형</div><div class="v">A형</div></div>
+            <div class="row"><div class="k">좋아하는 음식</div><div class="v">푸딩</div></div>
+            <div class="row"><div class="k">밴드</div><div class="v">Roselia</div></div>
+            <div class="row"><div class="k">CV</div><div class="v">아이바 아이나</div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid">
+            <div class="row"><div class="k">카리스마</div><div class="v"><div class="meter"><div class="bar" style="--val: 92%"></div></div></div></div>
+            <div class="row"><div class="k">음감</div><div class="v"><div class="meter"><div class="bar" style="--val: 88%"></div></div></div></div>
+            <div class="row"><div class="k">리더십</div><div class="v"><div class="meter"><div class="bar" style="--val: 86%"></div></div></div></div>
+            <div class="row"><div class="k">냉철함</div><div class="v"><div class="meter"><div class="bar" style="--val: 80%"></div></div></div></div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" id="moreBtn">자세히 보기</button>
+            <button class="btn" id="shareBtn">공유</button>
+            <a href="kirigiri.html" class="btn">다음으로</a>
+          </div>
+
+          <p class="footnote">※ 본 카드는 팬메이드 UI입니다. 뱅드림 공식 설정을 기반으로 정리한 형식이며, 일부 수치는 연출용 게이지입니다.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <dialog id="sheet">
+    <div class="sheet-head">
+      <strong>미나토 유키나 — 상세 정보</strong>
+      <button class="btn" id="closeSheet">닫기</button>
+    </div>
+    <div class="sheet-body">
+      <section>
+        <h3>성격 & 특징</h3>
+        <ul class="ul">
+          <li>완벽한 음악을 추구하는 <strong>완벽주의자</strong>.</li>
+          <li>냉정하고 강한 <strong>카리스마</strong>를 지녔지만, 속은 여리고 책임감 강함.</li>
+          <li>아버지의 영향을 받아 음악가로서의 길을 선택함.</li>
+          <li>밴드 Roselia의 중심인물로서 팀을 이끄는 리더 역할.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>밴드 Roselia</h3>
+        <ul class="ul">
+          <li>컨셉은 <strong>고딕 × 정열</strong>, 고음질 사운드와 완성도 높은 곡으로 팬층이 두터움.</li>
+          <li>유키나의 보컬은 힘 있고 직선적인 감정 전달이 특징.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>한 줄 소개</h3>
+        <p>“우리 Roselia는 완벽한 음악을 향해 나아간다.”</p>
+      </section>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

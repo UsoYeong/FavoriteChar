@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메지로 맥퀸 | 우마무스메 프로필 카드</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <div class="left">
+        <span class="chip">우마무스메 프리티 더비</span>
+        <span class="chip">프로필 카드</span>
+      </div>
+      <div class="right">
+        <button class="btn" id="themeBtn">테마</button>
+        <button class="btn" id="copyBtn">복사</button>
+      </div>
+    </div>
+
+    <section class="card" id="card">
+      <div class="banner">
+        <div class="emblem">MM</div>
+      </div>
+      <div class="content">
+        <div class="portrait">
+          <figure class="avatar">
+            <img id="portraitImg" alt="메지로 맥퀸 이미지" style="display:none" />
+            <div class="avatar-inner" id="avatarFallback">MM</div>
+          </figure>
+          <div class="upload">
+            <div>이미지 추가(선택): <span class="chip">JPG/PNG</span></div>
+            <label>
+              <input type="file" id="fileInput" accept="image/*" />
+              파일 선택
+            </label>
+          </div>
+          <div class="rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="opacity:.4">★</span>
+            <span style="margin-left:6px; color:var(--muted); font-weight:700; font-size:12px;">4.8</span>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="title">
+            <h1>메지로 맥퀸 <span style="color:var(--accent-1)">Mejiro McQueen</span></h1>
+            <div class="subtitle">メジロマックイーン · 트레이센 학원 / 메지로 가문</div>
+          </div>
+          <div class="tags">
+            <span class="chip">장거리(스테이어)</span>
+            <span class="chip">우아함</span>
+            <span class="chip">허당미</span>
+          </div>
+
+          <div class="grid">
+            <div class="row"><div class="k">생일</div><div class="v">4월 3일</div></div>
+            <div class="row"><div class="k">키</div><div class="v">159 cm</div></div>
+            <div class="row"><div class="k">체중</div><div class="v">비공개</div></div>
+            <div class="row"><div class="k">쓰리사이즈</div><div class="v">B71 · W54 · H76</div></div>
+            <div class="row"><div class="k">소속</div><div class="v">트레이센 학원 · 메지로 가문</div></div>
+            <div class="row"><div class="k">CV</div><div class="v">오오니시 사오리</div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid">
+            <div class="row"><div class="k">스태미나</div><div class="v"><div class="meter"><div class="bar" style="--val: 88%"></div></div></div></div>
+            <div class="row"><div class="k">지구력</div><div class="v"><div class="meter"><div class="bar" style="--val: 85%"></div></div></div></div>
+            <div class="row"><div class="k">스피드</div><div class="v"><div class="meter"><div class="bar" style="--val: 72%"></div></div></div></div>
+            <div class="row"><div class="k">지략</div><div class="v"><div class="meter"><div class="bar" style="--val: 76%"></div></div></div></div>
+          </div>
+
+          <div class="actions">
+            <button class="btn" id="moreBtn">자세히 보기</button>
+            <button class="btn" id="shareBtn">공유</button>
+            <a href="yukina.html" class="btn">다음으로</a>
+          </div>
+
+          <p class="footnote">※ 본 카드는 팬메이드 UI입니다. 우마무스메 공식 세계관/프로필의 핵심 정보를 보기 좋게 정리한 형식이며, 일부 수치는 연출용 게이지입니다.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <dialog id="sheet">
+    <div class="sheet-head">
+      <strong>메지로 맥퀸 — 상세 정보</strong>
+      <button class="btn" id="closeSheet">닫기</button>
+    </div>
+    <div class="sheet-body">
+      <section>
+        <h3>성격 & 특징</h3>
+        <ul class="ul">
+          <li>명문 <strong>메지로 가문</strong>의 아가씨. 기품 있고 우아하지만 가끔 허당미가 드러남.</li>
+          <li>장거리 레이스에 특화된 <strong>스테이어</strong>; 체력 관리와 페이스 운용에 강점.</li>
+          <li>먹는 걸 좋아하지만 체중 증가를 신경 쓰는 귀여운 면모.</li>
+          <li>스페셜 위크와의 라이벌이자 동료 케미로 유명.</li>
+          <li>단정한 말투, 책임감, 그리고 은근한 승부욕.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>원본 말(실존 경주마)</h3>
+        <ul class="ul">
+          <li>메지로 맥퀸(1987–2006): 일본의 대표적 장거리 명마.</li>
+          <li><strong>킷카쇼</strong> 우승, <strong>텐노쇼(봄)</strong> 2연패, <strong>스테이어즈 스테익스</strong> 우승 등 장거리 GⅠ·GⅡ에서 활약.</li>
+          <li>은퇴 후 씨수말로도 활동.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>한 줄 소개</h3>
+        <p>“기품으로 달리고, 품위로 승리하겠습니다. 프라우드 메지로.”</p>
+      </section>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
