@@ -60,17 +60,49 @@ shareBtn.addEventListener('click', async () => {
   }
 });
 
-// Subtle 3D tilt
-const card = document.getElementById('card');
-let rect;
-function tilt(e){
-  rect = rect || card.getBoundingClientRect();
-  const x = (e.clientX - rect.left) / rect.width;
-  const y = (e.clientY - rect.top) / rect.height;
-  const rx = (0.5 - y) * 6; // rotateX
-  const ry = (x - 0.5) * 8; // rotateY
-  card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+// Subtle 3D tilt (모바일/감속 선호 환경에서는 자동 비활성)
+const cards = document.querySelectorAll('.card');
+
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isCoarse = window.matchMedia('(pointer: coarse)').matches; // 보통 터치 디바이스
+
+if (!prefersReduced && !isCoarse) {
+  cards.forEach(card => {
+    let rect;
+    function tilt(e){
+      rect = rect || card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rx = (0.5 - y) * 6; // rotateX
+      const ry = (x - 0.5) * 8; // rotateY
+      card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+    }
+    function resetTilt(){
+      card.style.transform = 'rotateX(0) rotateY(0)';
+      rect = null;
+    }
+    card.addEventListener('pointermove', tilt, { passive: true });
+    card.addEventListener('pointerleave', resetTilt, { passive: true });
+    window.addEventListener('resize', () => { rect = null; }, { passive: true });
+  });
+} else {
+  // 터치/모션감소 환경: 살짝 떠오르는 효과만 (hover 대체)
+  cards.forEach(card => {
+    card.style.transition = 'transform .18s ease, box-shadow .2s ease';
+    card.addEventListener('pointerdown', () => {
+      card.style.transform = 'translateY(-2px)';
+      card.style.boxShadow = '0 14px 30px rgba(0,0,0,0.25)';
+    }, { passive: true });
+    card.addEventListener('pointerup', () => {
+      card.style.transform = 'none';
+      card.style.boxShadow = '';
+    }, { passive: true });
+    card.addEventListener('pointerleave', () => {
+      card.style.transform = 'none';
+      card.style.boxShadow = '';
+    }, { passive: true });
+  });
 }
-function resetTilt(){ card.style.transform = 'perspective(900px) rotateX(0) rotateY(0)'; rect = null; }
-card.addEventListener('pointermove', tilt);
-card.addEventListener('pointerleave', resetTilt);
+
+
+

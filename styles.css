@@ -173,3 +173,67 @@ dialog::backdrop { background: rgba(0,0,0,0.55); }
   object-position: center;  /* 중앙 기준으로 크롭 */
   border-radius: inherit;   /* 모서리 둥근 값 상속 */
 }
+
+/* ==== 공통 미세 개선 ==== */
+.card {
+  /* 모바일에서도 부드럽게 */
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow .2s ease;
+  will-change: transform;
+}
+
+/* 텍스트 줄바꿈 & 여백 보정 */
+.title h1 { word-break: keep-all; }
+.app { width: min(100%, 960px); }
+
+/* 정보 그리드가 너무 빽빽해지지 않도록 라인 높이 약간 여유 */
+.row .k, .row .v { line-height: 1.35; }
+
+
+
+/* ==== 화면 폭 900px 이하 ==== */
+@media (max-width: 900px) {
+  body { padding: 24px; }
+  .content { gap: 16px; padding: 16px; }
+  .avatar { max-width: 320px; }
+  .card-thumb img { height: 220px; } /* index 썸네일 */
+}
+
+/* ==== 화면 폭 780px 이하 (단일 컬럼 전환 이미 있음) 보완 ==== */
+@media (max-width: 780px) {
+  .toolbar { flex-wrap: wrap; gap: 10px; }
+  .toolbar .left, .toolbar .right { flex-wrap: wrap; }
+  .banner { height: 120px; }
+  .emblem { right: 12px; top: 12px; width: 56px; height: 56px; border-radius: 14px; font-size: 20px; }
+  .avatar { max-width: 360px; margin-inline: auto; }
+  .tags { gap: 6px; }
+  .grid { grid-template-columns: 1fr; } /* 정보/스탯 그리드 1열 */
+}
+
+/* ==== 화면 폭 560px 이하: 라벨/값 세로 스택, 터치 타겟 확대 ==== */
+@media (max-width: 560px) {
+  .row { grid-template-columns: 1fr; align-items: start; }
+  .row .k { font-size: 11.5px; }
+  .btn { padding: 12px 14px; border-radius: 12px; }
+  .avatar { max-width: 100%; } /* 카드 폭에 맞춤 */
+  .card-thumb img { height: 200px; }
+}
+
+/* ==== 극소형 (380px 이하) ==== */
+@media (max-width: 380px) {
+  .title h1 { font-size: 22px; }
+  .subtitle { font-size: 12px; }
+  .chip { padding: 5px 10px; font-size: 11px; }
+  .row { padding: 8px 10px; }
+  .meter { height: 8px; }
+}
+
+/* ==== dialog(모달) 모바일 최적화 ==== */
+dialog {
+  max-height: 90vh;
+  overflow: auto;
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+}
